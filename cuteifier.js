@@ -1,5 +1,5 @@
 var escodegen = require('escodegen'),
-    esprima = require('esprima'),
+    esprima = require('./vendor/esprima'),
     fs = require('fs'),
     util = require('util'),
     parsedFileAST,
@@ -8,7 +8,7 @@ var escodegen = require('escodegen'),
 process.argv.forEach(function (val, index, array) {
     if (index > 1) {
         fs.readFile(val, 'utf8', function(err, data) {
-            parsedFileAST = esprima.parse(data, {attachComment: true});
+            parsedFileAST = esprima.parse(data, {comment: true, attachComment: true});
             console.log(util.inspect(parsedFileAST, false, null));
             generatedSource = escodegen.generate(parsedFileAST, {comment: true});
             console.log(generatedSource);
