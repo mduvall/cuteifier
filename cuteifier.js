@@ -1,4 +1,4 @@
-var escodegen = require('escodegen'),
+var escodegen = require('./vendor/escodegen'),
     esprima = require('./vendor/esprima'),
     fs = require('fs'),
     util = require('util'),
