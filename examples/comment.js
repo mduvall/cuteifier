@@ -1,5 +1,6 @@
 var obj =
 {
+    // Pre-a comment
     a: function()
     {
         var foo = 1; // hello
@@ -15,6 +16,7 @@ function bar()
 {
     // comment below
     var i = 1;
+
 }
 
 /**

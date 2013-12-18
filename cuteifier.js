@@ -8,11 +8,14 @@ var escodegen = require('escodegen'),
 process.argv.forEach(function (val, index, array) {
     if (index > 1) {
         fs.readFile(val, 'utf8', function(err, data) {
-            parsedFileAST = esprima.parse(data, {attachComment: true});
-            console.log(util.inspect(parsedFileAST, false, null));
+            parsedFileAST = esprima.parse(data, {
+                attachComment: true
+            });
             generatedSource = escodegen.generate(parsedFileAST, {
                 comment: true
             });
+
+            console.log(util.inspect(parsedFileAST, false, null));
             console.log(generatedSource);
         });
     }
