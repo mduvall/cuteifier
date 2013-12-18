@@ -1,5 +1,5 @@
-var escodegen = require('./vendor/escodegen'),
-    esprima = require('./vendor/esprima'),
+var escodegen = require('./lib/escodegen'),
+    esprima = require('./lib/esprima'),
     fs = require('fs'),
     util = require('util'),
     parsedFileAST,
